@@ -2,7 +2,7 @@
 require 'vendor/autoload.php';
 require 'DoReMiController.php';
 
-$secret = json_decode(file_get_contents('secret.json'));
+$secret = json_decode(file_get_contents('../secret.json'));
 
 $router = new AltoRouter();
 $controller = new DoReMiController($secret->host, $secret->user, $secret->pass, $secret->db);

@@ -6,7 +6,9 @@ Use this:
 
 2. Clone the repo.
 
-3. Run `vagrant up` and let PuPHPet and Vagrant do its thing. When it finishes, you can now use `vagrant ssh` to ssh into the dev box. If you need to make changes to how the Vagrant box is set up, edit `puphpet/config.yaml` then run `vagrant up --provision` to re-provision the box. 
+3. Run `vagrant up` and let PuPHPet and Vagrant do its thing. When it finishes, you can now use `vagrant ssh` to ssh into the dev box. If you need to make changes to how the Vagrant box is set up, edit `puphpet/config.yaml` then run `vagrant up --provision` to re-provision the box.
+
+4. Add an entry to your hosts file `192.168.56.101 doremi.dev www.doremi.dev` which redirects any requests from the browser to the dev box. If you change the IP in `config.yaml`, make sure you update the hosts file.
 
 4. Note that files in this repo are kept in `/var/www/` on the dev box, so any future references in this readme are relative to that location.
 
@@ -14,4 +16,4 @@ Use this:
 
 6. Set up the database by `vagrant ssh` into the dev box and run `/doremi.sql` using `mysql --host=localhost --user=root --password=123 < doremi.sql` (default credentials as an example). **This will destroy any existing `DoReMi` database.** Re-run this command to reset the database at any time. 
 
-
+7. Shut down the dev box with `vagrant halt` when finished.
